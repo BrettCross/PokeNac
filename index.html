@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>PokéNac</title>
+  </head>
+  <body>
+    <main>
+      <h1>PokéNac</h1>
+      <p>A Comprehensive Pokémon Almanac</p>
+
+      <div class="container">
+        <form id="search-form" role="search">
+          <input type="text" id="search-input" />
+          <button id="search-button">Search</button>
+        </form>
+        <div id="output">
+          <div id="poke-info">
+            <!-- The info here is only a placeholder -->
+            <div class="name-and-id">
+              <span id="pokemon-id">#025</span>
+              <span id="pokemon-name">Pikachu</span>
+            </div>
+            <div class="size">
+              <span id="weight">60</span>
+              <span id="height">4</span>
+            </div>
+            <div id="sprite-container" class="sprite-container"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="pikachu front default sprite" id="sprite" width="250px" height="250px"></div>
+            <div id="types">
+              <span class="type electric">electric</span>
+            </div>
+          </div>
+          <div id="poke-stats">
+            <!-- The info here is only a placeholder -->
+            <table>
+              <tbody>
+                <tr>
+                  <th>Stats</th>
+                  <th>Base</th>
+                </tr>
+                <tr>
+                  <td>HP</td>
+                  <td>##</td>
+                </tr>
+                <tr>
+                  <td>Attack</td>
+                  <td>##</td>
+                </tr>
+                <tr>
+                  <td>Defense</td>
+                  <td>##</td>
+                </tr>
+                <tr>
+                  <td>Sp. Attack</td>
+                  <td>##</td>
+                </tr>
+                <tr>
+                  <td>Sp. Defense</td>
+                  <td>##</td>
+                </tr>
+                <tr>
+                  <td>Speed</td>
+                  <td>##</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>
