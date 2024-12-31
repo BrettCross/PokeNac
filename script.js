@@ -1,6 +1,7 @@
 const pokeAPI = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon";
 const searchInput = document.getElementById("search-input");
 const searchForm = document.getElementById("search-form");
+const outputDiv = document.getElementById("output");
 // pokemon info
 const pokemonID = document.getElementById("pokemon-id");
 const pokemonName = document.getElementById("pokemon-name");
@@ -18,19 +19,22 @@ const speed = document.getElementById("speed");
 
 const getPokemon = async () => {
   try {
+    // either by id or name 
+    //ex: pokemon/25 or pokemon/pikachu
     const pokemonToFind = searchInput.value.toLowerCase();
     const res = await fetch(`${pokeAPI}/${pokemonToFind}`);
     const data = await res.json();
-    // console.log(data);
+    console.log(data);
     updateUI(data);
   } catch (err) {
-    console.log(`Pokémon not found ${err}`);
+    console.error(err);
     alert("Pokémon not found");
     resetUI();
   }
 }
 
 const updateUI = (data) => {
+  outputDiv.classList.remove("hidden");
   // set info 
   pokemonID.textContent = `#${data.id}`;
   pokemonName.textContent = data.name.toUpperCase();
@@ -69,6 +73,8 @@ const resetUI = () => {
   speed.textContent = '';
 
   searchInput.value = '';
+
+  outputDiv.classList.add("hidden");
 };
 
 // add event listener to search form
