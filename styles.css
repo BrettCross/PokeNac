@@ -29,26 +29,26 @@ h1 {
   align-items: center;
   justify-content: center;
 	width: 400px;
-	margin: auto; 
+	margin: 1em auto; 
   padding: 1em;
   border-radius: 15px;
   border: 1px solid red;
 }
 
 #search-form {
-  width: 100%;
+  width: 95%;
   padding: 0.5em;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #search-input {
-  width: 267px;
+  width: 260px;
   line-height: 1.75em;
 }
 
 #search-button {
   line-height: 1em;
-  padding: 5px 15px;
+  padding: 5px 10px;
 }
 
 #output {
@@ -58,7 +58,7 @@ h1 {
   justify-content: center;
   width: 100%;
   margin: 1em;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   padding: 0.5em;
 }
 
@@ -67,6 +67,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 95%;
+  padding-bottom: 0.25em;
   border: 1px solid red;
   margin: 0.25em 0 0.5em 0;
   text-align: left;
@@ -78,7 +79,6 @@ h1 {
   flex-direction: column;
   width: 95%;
   border: 1px solid green;
-  
   margin: 0.25em 0 0.5em 0;
 }
 
@@ -86,26 +86,23 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  margin-bottom: 0.25em;
   border: 1px solid red;
 }
 
 .name-and-id {
   text-align: left;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  border: 1px solid blue;
-}
-
-#types {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  font-size: small;
-  text-transform: uppercase;
-  border: 1px solid green;
+  /* border: 1px solid blue; */
 }
 
 .type {
-  
+  font-size: small;
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .size {
@@ -125,7 +122,7 @@ h1 {
 
 table {
   text-align: left;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 th, td {
