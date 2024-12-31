@@ -22,30 +22,54 @@ const getPokemon = async () => {
     const res = await fetch(`${pokeAPI}/${pokemonToFind}`);
     const data = await res.json();
     // console.log(data);
-
-    // set info 
-    pokemonID.textContent = `#${data.id}`;
-    pokemonName.textContent = data.name.toUpperCase();
-    height.textContent = `Height: ${data.height}`;
-    weight.textContent = `Weight: ${data.weight}`;
-    spriteContainer.innerHTML = 
-      `<img src="${data.sprites.front_default}" alt="${data.name} front default sprite" id="sprite">`;
-
-    // set stats
-    hp.textContent = data.stats[0].base_stat;
-    attack.textContent = data.stats[1].base_stat;
-    defense.textContent = data.stats[2].base_stat;
-    specialAttack.textContent = data.stats[3].base_stat;
-    specialDefense.textContent = data.stats[4].base_stat;
-    speed.textContent = data.stats[5].base_stat;
-
-    // set types
-    types.innerHTML = data.types.map((obj) => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join('')
+    updateUI(data);
   } catch (err) {
     console.log(`Pokémon not found ${err}`);
     alert("Pokémon not found");
+    resetUI();
   }
 }
+
+const updateUI = (data) => {
+  // set info 
+  pokemonID.textContent = `#${data.id}`;
+  pokemonName.textContent = data.name.toUpperCase();
+  height.textContent = `HT: ${data.height}`;
+  weight.textContent = `WT: ${data.weight}`;
+  spriteContainer.innerHTML = 
+    `<img src="${data.sprites.front_default}" alt="${data.name} front default sprite" id="sprite">`;
+
+  // set stats
+  hp.textContent = data.stats[0].base_stat;
+  attack.textContent = data.stats[1].base_stat;
+  defense.textContent = data.stats[2].base_stat;
+  specialAttack.textContent = data.stats[3].base_stat;
+  specialDefense.textContent = data.stats[4].base_stat;
+  speed.textContent = data.stats[5].base_stat;
+
+  // set types
+  types.innerHTML = data.types.map((obj) => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join('')
+
+  searchInput.value = '';
+};
+
+const resetUI = () => {
+  pokemonID.textContent = '';
+  pokemonName.textContent = '';
+  height.textContent = '';
+  weight.textContent = '';
+  spriteContainer.innerHTML = '';
+  types.innerHTML = '';
+
+  hp.textContent = '';
+  attack.textContent = '';
+  defense.textContent = '';
+  specialAttack.textContent = '';
+  specialDefense.textContent = '';
+  speed.textContent = '';
+
+  searchInput.value = '';
+};
 
 // add event listener to search form
 searchForm.addEventListener('submit', e => {
