@@ -98,11 +98,11 @@ h1 {
 }
 
 .type {
-  font-size: small;
+  font-size: normal;
   text-transform: uppercase;
   text-align: center;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  line-height: 1em;
+  padding: 0.2em 0.5em;
 }
 
 .size {
