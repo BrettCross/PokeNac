@@ -49,6 +49,15 @@ h1 {
 #search-button {
   line-height: 1em;
   padding: 5px 10px;
+  background-color: #ffcb04;
+  border: 2px solid #2e6cb0;
+}
+
+#search-button:active {
+  line-height: 1em;
+  padding: 5px 10px;
+  background-color: #dfad02;
+  border: 2px solid #2e6cb0;
 }
 
 #output {
