@@ -101,8 +101,9 @@ h1 {
   font-size: normal;
   text-transform: uppercase;
   text-align: center;
+  margin-left: 0.25em;
   line-height: 1em;
-  padding: 0.2em 0.5em;
+  padding: 0.15em 0.5em;
 }
 
 .size {
@@ -139,92 +140,92 @@ visibility: hidden;
 
 .bug {
   background-color: #adbd21;
-  border: 1px solid #527725;
+  border: 2px solid #527725;
 }
 
 .dark {
   background-color: #735a4a;
-  border: 1px solid #503e34;
+  border: 2px solid #503e34;
 }
 
 .dragon {
   background-color: #7a62e6;
-  border: 1px solid #4a3994;
+  border: 2px solid #4a3994;
 }
 
 .electric {
   background-color: #ffc631;
-  border: 1px solid #bd8f25;
+  border: 2px solid #bd8f25;
 }
 
 .fairy {
   background-color: #f7b5f7;
-  border: 1px solid #c735d5;
+  border: 2px solid #c735d5;
 }
 
 .fighting {
   background-color: #a55239;
-  border: 1px solid #5d3e32;
+  border: 2px solid #5d3e32;
 }
 
 .fire {
   background-color: #f75231;
-  border: 1px solid #8f2b10;
+  border: 2px solid #8f2b10;
 }
 
 .flying {
   background-color: #9cadf7;
-  border: 1px solid #425294;
+  border: 2px solid #425294;
 }
 
 .ghost {
   background-color: #6363b5;
-  border: 1px solid #4f4167;
+  border: 2px solid #4f4167;
 }
 
 .grass {
   background-color: #72be4e;
-  border: 1px solid #4c7d3d;
+  border: 2px solid #4c7d3d;
 }
 
 .ground {
   background-color: #c6a54f;
-  border: 1px solid #826122;
+  border: 2px solid #826122;
 }
 
 .ice {
   background-color: #5acee7;
-  border: 1px solid #476ca6;
+  border: 2px solid #476ca6;
 }
 
 .normal {
   background-color: #ada594;
-  border: 1px solid #5f5e5b;
+  border: 2px solid #5f5e5b;
 }
 
 .poison {
   background-color: #a45498;
-  border: 1px solid #5e3f61;
+  border: 2px solid #5e3f61;
 }
 
 .psychic {
   background-color: #e76994;
-  border: 1px solid #824249;
+  border: 2px solid #824249;
 }
 
 .rock {
   background-color: #bda55a;
-  border: 1px solid #7e5e22;
+  border: 2px solid #7e5e22;
 }
 
 .steel {
   background-color: #adadc6;
-  border: 1px solid #606064;
+  border: 2px solid #606064;
 }
 
 .water {
   background-color: #399cff;
-  border: 1px solid #405da4;
+  border: 2px solid #405da4;
 }
 
 
