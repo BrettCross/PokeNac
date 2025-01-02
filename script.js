@@ -1,7 +1,7 @@
 const pokeAPI = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon";
 const searchInput = document.getElementById("search-input");
 const searchForm = document.getElementById("search-form");
-const outputDiv = document.getElementById("output");
+const pokemonCard = document.getElementById("pokemon-card");
 // pokemon info
 const pokemonID = document.getElementById("pokemon-id");
 const pokemonName = document.getElementById("pokemon-name");
@@ -34,7 +34,7 @@ const getPokemon = async () => {
 }
 
 const updateUI = (data) => {
-  outputDiv.classList.remove("hidden");
+  pokemonCard.classList.remove("hidden");
   // set info 
   pokemonID.textContent = `#${data.id}`;
   pokemonName.textContent = data.name.toUpperCase();
@@ -74,7 +74,7 @@ const resetUI = () => {
 
   searchInput.value = '';
 
-  outputDiv.classList.add("hidden");
+  pokemonCard.classList.add("hidden");
 };
 
 // add event listener to search form
