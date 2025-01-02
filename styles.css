@@ -6,13 +6,12 @@
 
 body {
 	height: 100vh;
-	/* background-color: #2f6cb5; */
-      font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to right, #8ec5fc, #e0c3fc);
-    margin: 0;
-    padding: 0;
-    color: #333;
-    text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
 }
 
 main {
@@ -48,7 +47,6 @@ h1 {
 #search-form {
   width: 95%;
   padding: 0.5em;
-  /* border: 1px solid red; */
 }
 
 #search-input {
@@ -125,7 +123,6 @@ h1 {
 
 .name-and-id {
   text-align: left;
-  /* border: 1px solid blue; */
 }
 
 .type-badge {
@@ -133,7 +130,6 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   margin-left: 0.25em;
-  /* line-height: 1em; */
   padding: 0.1em;
 }
 
@@ -149,7 +145,6 @@ h1 {
 
 table {
   text-align: left;
-  /* border: 1px solid red; */
 }
 
 th, td {
@@ -159,7 +154,7 @@ th, td {
 
 .hidden {
   display: none;
-visibility: hidden;
+  visibility: hidden;
 }
 
 /* Pokemon Type Styling */
