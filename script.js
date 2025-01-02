@@ -52,7 +52,7 @@ const updateUI = (data) => {
   speed.textContent = data.stats[5].base_stat;
 
   // set types
-  types.innerHTML = data.types.map((obj) => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join('')
+  types.innerHTML = data.types.map((obj) => `<span class="type-badge ${obj.type.name}">${obj.type.name}</span>`).join('')
 
   searchInput.value = '';
 };
