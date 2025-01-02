@@ -121,6 +121,11 @@ h1 {
 
 .name-and-id {
   text-align: left;
+  /* font-weight: 800; */
+}
+
+#pokemon-name {
+  font-weight: 800;
 }
 
 .type-badge {
