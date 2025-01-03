@@ -1,7 +1,11 @@
 const pokeAPI = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon";
+// interactive elements
 const searchInput = document.getElementById("search-input");
 const searchForm = document.getElementById("search-form");
 const pokemonCard = document.getElementById("pokemon-card");
+// const prevBtn = document.getElementById("prev-btn");
+// const nextBtn = document.getElementById("next-btn");
+const randomBtn = document.getElementById("random-btn");
 // pokemon info
 const pokemonID = document.getElementById("pokemon-id");
 const pokemonName = document.getElementById("pokemon-name");
@@ -17,6 +21,21 @@ const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
 
+const getRandomPokemon = async () => {
+  try {
+    // would like to not hardcode this
+    const pokemonToFind = getRandomInt(1025);
+    const res = await fetch(`${pokeAPI}/${pokemonToFind}`);
+    const data = await res.json();
+    console.log(data);
+    updateUI(data);
+  } catch (err) {
+    console.log(err);
+    alert("Pokémon not found");
+    resetUI();
+  }
+};
+
 const getPokemon = async () => {
   try {
     // either by id or name 
@@ -27,7 +46,7 @@ const getPokemon = async () => {
     console.log(data);
     updateUI(data);
   } catch (err) {
-    console.error(err);
+    console.log(err);
     alert("Pokémon not found");
     resetUI();
   }
@@ -78,6 +97,10 @@ const resetUI = () => {
 };
 
 // helper functions
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function convertWeight(weight) {
   return (weight / 4.536).toFixed(1);
 }
@@ -95,3 +118,5 @@ searchForm.addEventListener('submit', e => {
   e.preventDefault();
   getPokemon();
 });
+
+randomBtn.addEventListener('click', getRandomPokemon);
