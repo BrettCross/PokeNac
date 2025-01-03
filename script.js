@@ -38,8 +38,8 @@ const updateUI = (data) => {
   // set info 
   pokemonID.textContent = `#${data.id}`;
   pokemonName.textContent = data.name.toUpperCase();
-  height.textContent = `HT: ${data.height}`;
-  weight.textContent = `WT: ${data.weight}`;
+  height.textContent = `HT: ${convertHeight(data.height)}`;
+  weight.textContent = `WT: ${convertWeight(data.weight)} lbs`;
   spriteContainer.innerHTML = 
     `<img src="${data.sprites.front_default}" alt="${data.name} front default sprite" id="sprite">`;
 
@@ -76,6 +76,19 @@ const resetUI = () => {
 
   pokemonCard.classList.add("hidden");
 };
+
+// helper functions
+function convertWeight(weight) {
+  return (weight / 4.536).toFixed(1);
+}
+
+function convertHeight(height) {
+  let totalInches = Math.round(height * 3.93);
+  let feet = Math.floor(totalInches / 12);
+  let inches = Math.round(totalInches % 12);
+  
+  return `${feet}' ${inches}"`;
+}
 
 // add event listener to search form
 searchForm.addEventListener('submit', e => {
