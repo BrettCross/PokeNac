@@ -21,30 +21,21 @@ const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
 
-const getRandomPokemon = async () => {
-  try {
-    // would like to not hardcode this
-    const pokemonToFind = getRandomInt(1025);
-    const res = await fetch(`${pokeAPI}/${pokemonToFind}`);
-    const data = await res.json();
-    console.log(data);
-    updateUI(data);
-  } catch (err) {
-    console.log(err);
-    alert("Pokémon not found");
-    resetUI();
-  }
+let isRandom = false;
+
+const getRandomPokemon = () => {
+  isRandom = true;
+  getPokemon();
 };
 
 const getPokemon = async () => {
   try {
-    // either by id or name 
-    //ex: pokemon/25 or pokemon/pikachu
-    const pokemonToFind = searchInput.value.toLowerCase();
+    const pokemonToFind = isRandom ? getRandomInt(1025) : searchInput.value.toLowerCase();
     const res = await fetch(`${pokeAPI}/${pokemonToFind}`);
     const data = await res.json();
     console.log(data);
     updateUI(data);
+    isRandom = false;
   } catch (err) {
     console.log(err);
     alert("Pokémon not found");
