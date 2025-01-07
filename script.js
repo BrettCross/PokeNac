@@ -3,8 +3,8 @@ const pokeAPI = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon";
 const searchInput = document.getElementById("search-input");
 const searchForm = document.getElementById("search-form");
 const pokemonCard = document.getElementById("pokemon-card");
-// const prevBtn = document.getElementById("prev-btn");
-// const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
 const randomBtn = document.getElementById("random-btn");
 // pokemon info
 const pokemonID = document.getElementById("pokemon-id");
@@ -21,21 +21,37 @@ const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
 
-let isRandom = false;
+const numPokemon = 1025;
+
+let currentPokemonID = 0;
 
 const getRandomPokemon = () => {
-  isRandom = true;
-  getPokemon();
+  const randomPokemonID = getRandomInt(numPokemon);
+  getPokemon(randomPokemonID);
 };
 
-const getPokemon = async () => {
+const getNextPokemon = () => {
+  if (currentPokemonID >= numPokemon) {
+    return;
+  }
+  getPokemon(currentPokemonID+1);
+};
+
+const getPrevPokemon = () => {
+  if (currentPokemonID <= 1) {
+    return;
+  }
+  getPokemon(currentPokemonID-1);
+};
+
+const getPokemon = async (pokemonToFind) => {
   try {
-    const pokemonToFind = isRandom ? getRandomInt(1025) : searchInput.value.toLowerCase();
+    // const pokemonToFind = searchInput.value.toLowerCase();
     const res = await fetch(`${pokeAPI}/${pokemonToFind}`);
     const data = await res.json();
     console.log(data);
+    currentPokemonID = data.id;
     updateUI(data);
-    isRandom = false;
   } catch (err) {
     console.log(err);
     alert("Pokémon not found");
@@ -107,7 +123,9 @@ function convertHeight(height) {
 // add event listener to search form
 searchForm.addEventListener('submit', e => {
   e.preventDefault();
-  getPokemon();
+  getPokemon(searchInput.value.toLowerCase());
 });
 
 randomBtn.addEventListener('click', getRandomPokemon);
+prevBtn.addEventListener('click', getPrevPokemon);
+nextBtn.addEventListener('click', getNextPokemon);
