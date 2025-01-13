@@ -57,6 +57,8 @@ h1 {
 #search-input {
   width: 220px;
   line-height: 1.75em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 button {
