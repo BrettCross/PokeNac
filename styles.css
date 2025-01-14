@@ -9,7 +9,6 @@
 }
 
 body {
-	height: 100vh;
   font-family: 'Open Sans', sans-serif;
   /* background: linear-gradient(to right, #8ec5fc, #e0c3fc); */
   background: linear-gradient(0.25turn, #FFD700, #a6dadf, #C0C0C0);
@@ -25,8 +24,6 @@ main {
 	align-items: center;
 	justify-content: center;
   line-height: 1.5em;
-  margin: 1em;
-  padding: 1em;
 }
 
 h1 {
@@ -35,7 +32,8 @@ h1 {
   color: var(--pokemon-yellow);
   -webkit-text-stroke: 3px var(--pokemon-light-blue);
   text-shadow: -3px 3px var(--pokemon-dark-blue);
-  margin-bottom: 20px;
+  margin: 0.45em;
+  margin-bottom: 16px;
 }
 
 .container {
@@ -51,7 +49,7 @@ h1 {
 }
 
 #search-form {
-  padding: 0.5em;
+  padding-top: 0.5em;
 }
 
 #search-input {
