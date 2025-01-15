@@ -173,7 +173,7 @@ th, td {
   visibility: hidden;
 }
 
-@media screen and (max-width: 400) {
+@media screen and (max-width: 400px) {
   h1 {
     font-size: 2rem;
   }
