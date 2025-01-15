@@ -173,6 +173,16 @@ th, td {
   visibility: hidden;
 }
 
+@media screen and (max-width: 400) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    width: 350px;
+  }
+}
+
 /* Pokemon Type Styling */
 
 .bug {
